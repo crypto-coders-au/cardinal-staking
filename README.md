@@ -1,3 +1,7 @@
+# CryptCoders
+
+This is a version of the genius Cardinal Staking protocol with updated program addresses that we maintain. 
+
 # Cardinal Staking
 
 [![License](https://img.shields.io/badge/license-AGPL%203.0-blue)](https://github.com/cardinal-labs/cardinal-staking/blob/master/LICENSE)
