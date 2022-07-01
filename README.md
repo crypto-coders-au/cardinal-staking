@@ -8,8 +8,8 @@ This edition of the Cardinal Staking contracts is licensed under the GNU Affero 
 
 Program addresses are the same on devnet, testnet, and mainnet-beta.
 
-- StakePool: [`GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me`](https://explorer.solana.com/address/stkBL96RZkjY5ine4TvPihGqW8UHJfch2cokjAPzV8i)
-- RewardDistributor: [`CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy`](https://explorer.solana.com/address/rwdNPNPS6zNvtF6FMvaxPRjzu2eC51mXaDT9rmWsojp)
+- StakePool: [`GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me`](https://explorer.solana.com/address/GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me)
+- RewardDistributor: [`CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy`](https://explorer.solana.com/address/CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy)
 
 
 # Cardinal Staking
