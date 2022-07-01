@@ -67,8 +67,9 @@ export const initStakePool = (
     imageUri: string;
     authority: PublicKey;
     resetOnStake: boolean;
-    cooldownSeconds: number | null;
-    minStakeSeconds: number | null;
+    cooldownSeconds?: number;
+    minStakeSeconds?: number;
+    endDate?: BN;
   }
 ): TransactionInstruction => {
   const provider = new AnchorProvider(connection, wallet, {});
@@ -86,8 +87,9 @@ export const initStakePool = (
       requiresAuthorization: params.requiresAuthorization ?? false,
       authority: params.authority,
       resetOnStake: params.resetOnStake,
-      cooldownSeconds: params.cooldownSeconds,
-      minStakeSeconds: params.minStakeSeconds,
+      cooldownSeconds: params.cooldownSeconds ?? null,
+      minStakeSeconds: params.minStakeSeconds ?? null,
+      endDate: params.endDate ?? null,
     },
     {
       accounts: {
@@ -341,15 +343,16 @@ export const updateStakePool = (
   wallet: Wallet,
   params: {
     stakePoolId: PublicKey;
-    requiresCreators?: PublicKey[];
-    requiresCollections?: PublicKey[];
-    requiresAuthorization?: boolean;
-    overlayText?: string;
-    imageUri?: string;
-    authority?: PublicKey;
-    resetOnStake?: boolean;
+    requiresCreators: PublicKey[];
+    requiresCollections: PublicKey[];
+    requiresAuthorization: boolean;
+    overlayText: string;
+    imageUri: string;
+    authority: PublicKey;
+    resetOnStake: boolean;
     cooldownSeconds?: number;
     minStakeSeconds?: number;
+    endDate?: BN;
   }
 ): TransactionInstruction => {
   const provider = new AnchorProvider(connection, wallet, {});
@@ -360,15 +363,16 @@ export const updateStakePool = (
   );
   return stakePoolProgram.instruction.updatePool(
     {
-      overlayText: params.overlayText || "RENTED",
-      imageUri: params.imageUri || "",
-      requiresCollections: params.requiresCollections || null,
-      requiresCreators: params.requiresCreators || null,
-      requiresAuthorization: params.requiresAuthorization || false,
-      authority: params.authority || null,
-      resetOnStake: params.resetOnStake || false,
-      cooldownSeconds: params.cooldownSeconds || null,
-      minStakeSeconds: params.minStakeSeconds || null,
+      overlayText: params.overlayText,
+      imageUri: params.imageUri,
+      requiresCollections: params.requiresCollections,
+      requiresCreators: params.requiresCreators,
+      requiresAuthorization: params.requiresAuthorization,
+      authority: params.authority,
+      resetOnStake: params.resetOnStake,
+      cooldownSeconds: params.cooldownSeconds ?? null,
+      minStakeSeconds: params.minStakeSeconds ?? null,
+      endDate: params.endDate ?? null,
     },
     {
       accounts: {

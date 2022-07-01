@@ -76,6 +76,7 @@ export const withInitStakePool = async (
     resetOnStake?: boolean;
     cooldownSeconds?: number;
     minStakeSeconds?: number;
+    endDate?: BN;
   }
 ): Promise<[web3.Transaction, web3.PublicKey]> => {
   const [identifierId] = await findIdentifierId();
@@ -104,8 +105,9 @@ export const withInitStakePool = async (
       imageUri: params.imageUri || "",
       authority: wallet.publicKey,
       resetOnStake: params.resetOnStake || false,
-      cooldownSeconds: params.cooldownSeconds || null,
-      minStakeSeconds: params.minStakeSeconds || null,
+      cooldownSeconds: params.cooldownSeconds,
+      minStakeSeconds: params.minStakeSeconds,
+      endDate: params.endDate,
     })
   );
   return [transaction, stakePoolId];
@@ -447,20 +449,22 @@ export const withUpdateStakePool = (
     resetOnStake?: boolean;
     cooldownSeconds?: number;
     minStakeSeconds?: number;
+    endDate?: BN;
   }
 ): [web3.Transaction, web3.PublicKey] => {
   transaction.add(
     updateStakePool(connection, wallet, {
       stakePoolId: params.stakePoolId,
-      requiresCreators: params.requiresCreators,
-      requiresCollections: params.requiresCollections,
-      requiresAuthorization: params.requiresAuthorization,
-      overlayText: params.overlayText,
-      imageUri: params.imageUri,
+      requiresCreators: params.requiresCreators || [],
+      requiresCollections: params.requiresCollections || [],
+      requiresAuthorization: params.requiresAuthorization || false,
+      overlayText: params.overlayText || "STAKED",
+      imageUri: params.imageUri || "",
       authority: wallet.publicKey,
-      resetOnStake: params.resetOnStake,
+      resetOnStake: params.resetOnStake || false,
       cooldownSeconds: params.cooldownSeconds,
       minStakeSeconds: params.minStakeSeconds,
+      endDate: params.endDate,
     })
   );
   return [transaction, params.stakePoolId];

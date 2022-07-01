@@ -11,6 +11,7 @@ pub struct InitPoolIx {
     reset_on_stake: bool,
     cooldown_seconds: Option<u32>,
     min_stake_seconds: Option<u32>,
+    end_date: Option<i64>,
 }
 
 #[derive(Accounts)]
@@ -47,6 +48,7 @@ pub fn handler(ctx: Context<InitPoolCtx>, ix: InitPoolIx) -> Result<()> {
     stake_pool.total_staked = 0;
     stake_pool.cooldown_seconds = ix.cooldown_seconds;
     stake_pool.min_stake_seconds = ix.min_stake_seconds;
+    stake_pool.end_date = ix.end_date;
 
     let identifier = &mut ctx.accounts.identifier;
     identifier.count += 1;

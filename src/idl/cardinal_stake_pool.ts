@@ -1,5 +1,5 @@
 export type CardinalStakePool = {
-  version: "1.5.30";
+  version: "1.5.31";
   name: "cardinal_stake_pool";
   instructions: [
     {
@@ -644,6 +644,12 @@ export type CardinalStakePool = {
             type: {
               option: "u32";
             };
+          },
+          {
+            name: "endDate";
+            type: {
+              option: "i64";
+            };
           }
         ];
       };
@@ -734,6 +740,12 @@ export type CardinalStakePool = {
             type: {
               option: "u32";
             };
+          },
+          {
+            name: "endDate";
+            type: {
+              option: "i64";
+            };
           }
         ];
       };
@@ -760,50 +772,38 @@ export type CardinalStakePool = {
         kind: "struct";
         fields: [
           {
-            name: "overlayText";
-            type: {
-              option: "string";
-            };
-          },
-          {
             name: "imageUri";
             type: {
               option: "string";
             };
           },
           {
+            name: "overlayText";
+            type: "string";
+          },
+          {
             name: "requiresCollections";
             type: {
-              option: {
-                vec: "publicKey";
-              };
+              vec: "publicKey";
             };
           },
           {
             name: "requiresCreators";
             type: {
-              option: {
-                vec: "publicKey";
-              };
+              vec: "publicKey";
             };
           },
           {
             name: "requiresAuthorization";
-            type: {
-              option: "bool";
-            };
+            type: "bool";
           },
           {
             name: "authority";
-            type: {
-              option: "publicKey";
-            };
+            type: "publicKey";
           },
           {
             name: "resetOnStake";
-            type: {
-              option: "bool";
-            };
+            type: "bool";
           },
           {
             name: "cooldownSeconds";
@@ -815,6 +815,12 @@ export type CardinalStakePool = {
             name: "minStakeSeconds";
             type: {
               option: "u32";
+            };
+          },
+          {
+            name: "endDate";
+            type: {
+              option: "i64";
             };
           }
         ];
@@ -941,12 +947,17 @@ export type CardinalStakePool = {
       code: 6023;
       name: "InvalidMintMetadata";
       msg: "Invalid mint metadata";
+    },
+    {
+      code: 6024;
+      name: "StakePoolHasEnded";
+      msg: "Stake pool has ended";
     }
   ];
 };
 
 export const IDL: CardinalStakePool = {
-  version: "1.5.30",
+  version: "1.5.31",
   name: "cardinal_stake_pool",
   instructions: [
     {
@@ -1592,6 +1603,12 @@ export const IDL: CardinalStakePool = {
               option: "u32",
             },
           },
+          {
+            name: "endDate",
+            type: {
+              option: "i64",
+            },
+          },
         ],
       },
     },
@@ -1682,6 +1699,12 @@ export const IDL: CardinalStakePool = {
               option: "u32",
             },
           },
+          {
+            name: "endDate",
+            type: {
+              option: "i64",
+            },
+          },
         ],
       },
     },
@@ -1707,50 +1730,38 @@ export const IDL: CardinalStakePool = {
         kind: "struct",
         fields: [
           {
-            name: "overlayText",
-            type: {
-              option: "string",
-            },
-          },
-          {
             name: "imageUri",
             type: {
               option: "string",
             },
           },
           {
+            name: "overlayText",
+            type: "string",
+          },
+          {
             name: "requiresCollections",
             type: {
-              option: {
-                vec: "publicKey",
-              },
+              vec: "publicKey",
             },
           },
           {
             name: "requiresCreators",
             type: {
-              option: {
-                vec: "publicKey",
-              },
+              vec: "publicKey",
             },
           },
           {
             name: "requiresAuthorization",
-            type: {
-              option: "bool",
-            },
+            type: "bool",
           },
           {
             name: "authority",
-            type: {
-              option: "publicKey",
-            },
+            type: "publicKey",
           },
           {
             name: "resetOnStake",
-            type: {
-              option: "bool",
-            },
+            type: "bool",
           },
           {
             name: "cooldownSeconds",
@@ -1762,6 +1773,12 @@ export const IDL: CardinalStakePool = {
             name: "minStakeSeconds",
             type: {
               option: "u32",
+            },
+          },
+          {
+            name: "endDate",
+            type: {
+              option: "i64",
             },
           },
         ],
@@ -1888,6 +1905,11 @@ export const IDL: CardinalStakePool = {
       code: 6023,
       name: "InvalidMintMetadata",
       msg: "Invalid mint metadata",
+    },
+    {
+      code: 6024,
+      name: "StakePoolHasEnded",
+      msg: "Stake pool has ended",
     },
   ],
 };
