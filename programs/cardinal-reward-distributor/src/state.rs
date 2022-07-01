@@ -4,7 +4,7 @@ use std::str::FromStr;
 pub const CLAIM_REWARD_LAMPORTS: u64 = 2_000_000;
 
 pub fn assert_reward_manager(pubkey: &Pubkey) -> bool {
-    pubkey.to_string() == Pubkey::from_str("crkdpVWjHWdggGgBuSyAqSmZUmAjYLzD435tcLDRLXr").unwrap().to_string()
+    pubkey.to_string() == Pubkey::from_str("AXqdfTru4hNG5JPoxTDq1UAZ7YPT86pvuxMj6yUSoyNZ").unwrap().to_string()
 }
 
 pub const REWARD_ENTRY_SEED: &str = "reward-entry";
