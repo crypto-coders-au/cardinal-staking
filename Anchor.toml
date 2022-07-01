@@ -5,21 +5,21 @@ solana_version = "1.9.13"
 test = "yarn mocha tests/*.spec.ts"
 
 [provider]
-cluster = "localnet"
-wallet = "./tests/test-key.json"
+cluster = "devnet"
+wallet = "~/deployments/cryptocoders/cardinal/upgrade_authority.json"
 
 [programs.mainnet]
-cardinal_stake_pool = "stkBL96RZkjY5ine4TvPihGqW8UHJfch2cokjAPzV8i"
-cardinal_reward_distributor = "rwdNPNPS6zNvtF6FMvaxPRjzu2eC51mXaDT9rmWsojp"
+cardinal_stake_pool = "GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me"
+cardinal_reward_distributor = "CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy"
 
 [programs.devnet]
-cardinal_stake_pool = "stkBL96RZkjY5ine4TvPihGqW8UHJfch2cokjAPzV8i"
-cardinal_reward_distributor = "rwdNPNPS6zNvtF6FMvaxPRjzu2eC51mXaDT9rmWsojp"
+cardinal_stake_pool = "GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me"
+cardinal_reward_distributor = "CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy"
 
 [programs.testnet]
-cardinal_stake_pool = "stkBL96RZkjY5ine4TvPihGqW8UHJfch2cokjAPzV8i"
-cardinal_reward_distributor = "rwdNPNPS6zNvtF6FMvaxPRjzu2eC51mXaDT9rmWsojp"
+cardinal_stake_pool = "GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me"
+cardinal_reward_distributor = "CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy"
 
 [programs.localnet]
-cardinal_stake_pool = "stkBL96RZkjY5ine4TvPihGqW8UHJfch2cokjAPzV8i"
-cardinal_reward_distributor = "rwdNPNPS6zNvtF6FMvaxPRjzu2eC51mXaDT9rmWsojp"
+cardinal_stake_pool = "GisLZe6PxAqovAo7SpKujhTk8J5Kd2kZYdEBWJaWU7me"
+cardinal_reward_distributor = "CkyfuYw8x3YStMoxwKuSzo33czXL6r19xdQEwnvvxeZy"
