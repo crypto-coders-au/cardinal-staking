@@ -20,7 +20,7 @@ build:
 start:
 	solana-test-validator --url https://api.devnet.solana.com \
 		--clone metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s --clone PwDiXFxQsGra4sFFTT8r1QWRMd4vfumiWC1jfWNfdYT \
-		--clone mgr99QFMYByTqGPWmNqunV7vBLmWWXdSrHUfV8Jf3JM --clone ojLGErfqghuAqpJXE1dguXF7kKfvketCEeah8ig6GU3 \
+		--clone H7h6dv6X9KGLuCFvYMNa1zmCP5VCSzw8AkQGod6zaCnX --clone ojLGErfqghuAqpJXE1dguXF7kKfvketCEeah8ig6GU3 \
 		--bpf-program ./target/deploy/cardinal_stake_pool-keypair.json ./target/deploy/cardinal_stake_pool.so \
 		--bpf-program ./target/deploy/cardinal_reward_distributor-keypair.json ./target/deploy/cardinal_reward_distributor.so \
 		--reset --quiet & echo $$!
